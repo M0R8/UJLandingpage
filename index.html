@@ -128,79 +128,6 @@ button{font-family:inherit}
   backdrop-filter:blur(8px);transition:opacity .3s;
 }
 
-/* ---------- DESCARGAR / PRÓXIMAMENTE ---------- */
-#descargar{position:relative;overflow:hidden}
-.soon-pill{
-  display:inline-block;margin-top:34px;padding:9px 22px;border-radius:999px;
-  background:rgba(46,183,207,.12);border:1px solid rgba(46,183,207,.55);color:var(--title);
-  font-family:var(--font-display);font-weight:700;letter-spacing:.3em;font-size:var(--fs-min);
-}
-.stores{display:flex;justify-content:center;gap:18px;margin-top:20px;flex-wrap:wrap}
-.store{display:flex;align-items:center;gap:14px;padding:16px 26px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid var(--line);backdrop-filter:blur(10px);min-width:220px;cursor:default}
-.store svg{width:30px;height:30px;color:var(--title)}
-.store small{display:block;color:var(--muted);font-size:var(--fs-min);letter-spacing:.16em;text-transform:uppercase}
-.store b{font-family:var(--font-display);font-size:16px;letter-spacing:.08em;color:var(--text)}
-.float-fauna{
-  position:absolute;width:64px;height:64px;display:grid;place-items:center;object-fit:contain;
-  filter:drop-shadow(0 0 14px rgba(94,240,142,.7));animation:floaty 8s ease-in-out infinite;opacity:.9;pointer-events:none;
-  font-size:30px;border-radius:12px;
-}
-.ff1{left:8%;top:22%}.ff2{right:9%;top:30%;animation-delay:1.5s}.ff3{left:14%;bottom:20%;animation-delay:3s}.ff4{right:15%;bottom:24%;animation-delay:4.5s}
-@keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-26px) rotate(8deg)}}
-
-/* ---------- QUIÉNES SOMOS ---------- */
-#quienes-somos{position:relative}
-.qs-head{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin:6px 0 40px}
-.qs-head h2{margin:0;font-family:'Montserrat',sans-serif}
-.qs-logo{width:clamp(72px,9vw,110px);height:clamp(72px,9vw,110px);object-fit:contain;filter:drop-shadow(0 0 22px rgba(94,240,142,.35))}
-.qs-text{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
-.qs-text p{color:var(--muted);font-size:15px;line-height:1.75}
-.qs-text b{color:var(--text)}
-.team{display:flex;flex-wrap:wrap;justify-content:center;gap:38px 30px;margin-top:56px}
-.member{
-  width:236px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-  border:1px solid var(--line);border-radius:22px;padding:28px 20px 24px;backdrop-filter:blur(10px);
-  transition:transform .3s,border-color .3s,box-shadow .3s;
-}
-.member:hover{transform:translateY(-6px);border-color:rgba(46,183,207,.5);box-shadow:0 22px 60px rgba(0,0,0,.5),0 0 30px rgba(46,183,207,.12)}
-.member-photo{
-  width:108px;height:108px;border-radius:50%;object-fit:cover;
-  border:2px solid rgba(46,183,207,.45);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 12px 30px rgba(0,0,0,.55);
-}
-.member h3{font-family:var(--font-body);font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--title);line-height:1.3}
-.member p{color:var(--muted);font-size:var(--fs-min);line-height:1.6;flex:1}
-.member-li{
-  width:38px;height:38px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;
-  color:var(--muted);transition:all .3s;background:rgba(255,255,255,.04);
-}
-.member-li:hover{color:var(--title);border-color:rgba(46,183,207,.55);transform:translateY(-3px)}
-.member-li svg{width:17px;height:17px}
-.qs-contact{margin-top:76px}
-.qs-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
-.contact-item{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:var(--fs-min);letter-spacing:.04em;transition:color .25s;width:fit-content}
-.contact-item:hover{color:var(--text)}
-.contact-item svg{width:22px;height:22px;color:var(--title);flex:none}
-.contact-item u{text-underline-offset:4px}
-
-/* ---------- FOOTER ---------- */
-footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14,.7);backdrop-filter:blur(10px)}
-.foot{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
-.foot-left{display:flex;align-items:center;gap:14px}
-.foot-left p{color:var(--muted);font-size:var(--fs-min);letter-spacing:.1em}
-.foot-logo{width:30px;height:30px;object-fit:contain}
-.socials{display:flex;gap:12px}
-.socials a{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:all .3s;background:rgba(255,255,255,.04)}
-.socials a:hover{color:var(--title);border-color:rgba(46,183,207,.55);transform:translateY(-3px)}
-.socials svg{width:18px;height:18px}
-.atp-wrap{display:flex;align-items:center;gap:12px}
-.atp{width:46px;height:46px;border:2px solid var(--title);border-radius:10px;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:var(--title);letter-spacing:.05em;box-shadow:0 0 20px rgba(46,183,207,.25)}
-.atp-wrap small{color:var(--muted);font-size:var(--fs-min);letter-spacing:.12em;max-width:140px;line-height:1.5}
-
-/* ---------- REVEAL ---------- */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease}
-.reveal.in{opacity:1;transform:none}
-
 /* ---------- TRÁILER ---------- */
 #trailer{max-width:1180px;margin:0 auto;padding:110px 24px;text-align:center;position:relative}
 .tr-frame{
@@ -258,6 +185,204 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 .tr-error small{color:var(--muted)}
 .tr-error b{color:#fff}
 
+/* ---------- QUIÉNES SOMOS ---------- */
+#quienes-somos{position:relative}
+.qs-head{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin:6px 0 40px}
+.qs-head h2{margin:0;font-family:'Montserrat',sans-serif}
+.qs-logo{width:clamp(72px,9vw,110px);height:clamp(72px,9vw,110px);object-fit:contain;filter:drop-shadow(0 0 22px rgba(94,240,142,.35))}
+.qs-text{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.qs-text p{color:var(--muted);font-size:15px;line-height:1.75}
+.qs-text b{color:var(--text)}
+.team{display:flex;flex-wrap:wrap;justify-content:center;gap:38px 30px;margin-top:56px}
+.member{
+  width:236px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:22px;padding:28px 20px 24px;backdrop-filter:blur(10px);
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.member:hover{transform:translateY(-6px);border-color:rgba(46,183,207,.5);box-shadow:0 22px 60px rgba(0,0,0,.5),0 0 30px rgba(46,183,207,.12)}
+.member-photo{
+  width:108px;height:108px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(46,183,207,.45);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 12px 30px rgba(0,0,0,.55);
+}
+.member h3{font-family:var(--font-body);font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--title);line-height:1.3}
+.member p{color:var(--muted);font-size:var(--fs-min);line-height:1.6;flex:1}
+.member-li{
+  width:38px;height:38px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;
+  color:var(--muted);transition:all .3s;background:rgba(255,255,255,.04);
+}
+.member-li:hover{color:var(--title);border-color:rgba(46,183,207,.55);transform:translateY(-3px)}
+.member-li svg{width:17px;height:17px}
+
+/* ---------- CONTACTO MEJORADO ---------- */
+.qs-contact{margin-top:76px}
+.contact-panel{
+  margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:22px;
+}
+.contact-card{
+  display:flex;align-items:center;gap:20px;padding:28px 30px;border-radius:22px;
+  background:linear-gradient(135deg,rgba(46,183,207,.06),rgba(94,240,142,.04));
+  border:1px solid var(--line);backdrop-filter:blur(12px);
+  transition:transform .35s, border-color .35s, box-shadow .35s;position:relative;overflow:hidden;
+}
+.contact-card::before{
+  content:'';position:absolute;top:-50%;right:-30%;width:60%;height:120%;
+  background:radial-gradient(ellipse,rgba(46,183,207,.10),transparent 70%);
+  opacity:0;transition:opacity .4s;
+}
+.contact-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(46,183,207,.5);
+  box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(46,183,207,.12);
+}
+.contact-card:hover::before{opacity:1}
+.contact-card-icon{
+  width:60px;height:60px;min-width:60px;border-radius:18px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(46,183,207,.15),rgba(94,240,142,.10));
+  border:1px solid rgba(46,183,207,.35);
+  transition:transform .3s;
+}
+.contact-card:hover .contact-card-icon{transform:scale(1.08) rotate(-4deg)}
+.contact-card-icon svg{width:28px;height:28px;color:var(--title)}
+.contact-card-info{display:flex;flex-direction:column;gap:4px;position:relative;z-index:1}
+.contact-card-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.contact-card-value{font-size:15px;color:var(--text);font-weight:500;letter-spacing:.02em}
+.contact-card-value u{text-underline-offset:4px}
+.contact-card-arrow{
+  margin-left:auto;position:relative;z-index:1;
+  width:36px;height:36px;border-radius:12px;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.04);border:1px solid var(--line);
+  color:var(--muted);transition:all .3s;
+}
+.contact-card:hover .contact-card-arrow{color:var(--title);border-color:rgba(46,183,207,.5);transform:translateX(4px)}
+.contact-card-arrow svg{width:18px;height:18px}
+
+/* ---------- SORTEO ---------- */
+#sorteo{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(6,6,15,0),rgba(46,183,207,.04) 50%,rgba(6,6,15,0));
+}
+.sorteo-wrap{
+  max-width:1180px;margin:0 auto;padding:110px 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+.sorteo-visual{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  min-height:420px;
+}
+.sorteo-glow{
+  position:absolute;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(94,240,142,.18),rgba(46,183,207,.08) 50%,transparent 70%);
+  animation:sortGlow 4s ease-in-out infinite alternate;
+  filter:blur(20px);
+}
+@keyframes sortGlow{from{transform:scale(.9);opacity:.7}to{transform:scale(1.1);opacity:1}}
+.sorteo-ring{
+  position:absolute;width:280px;height:280px;border-radius:50%;
+  border:1px dashed rgba(46,183,207,.3);
+  animation:sortSpin 30s linear infinite;
+}
+.sorteo-ring::before{
+  content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 12px var(--green);
+}
+@keyframes sortSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.sorteo-ring2{
+  position:absolute;width:340px;height:340px;border-radius:50%;
+  border:1px solid rgba(94,240,142,.15);
+  animation:sortSpin 45s linear infinite reverse;
+}
+.sorteo-ring2::after{
+  content:'';position:absolute;bottom:-3px;left:50%;width:6px;height:6px;border-radius:50%;
+  background:var(--title);box-shadow:0 0 10px var(--title);
+}
+.sorteo-figure{
+  position:relative;z-index:2;
+  width:240px;height:240px;
+  animation:sortFloat 5s ease-in-out infinite;
+  filter:drop-shadow(0 20px 40px rgba(46,183,207,.3));
+}
+@keyframes sortFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}
+.sorteo-figure svg{width:100%;height:100%}
+.sorteo-sparkle{
+  position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 12px var(--green);
+  animation:sparkle 2.5s ease-in-out infinite;
+}
+.sorteo-sparkle:nth-child(1){top:15%;left:10%;animation-delay:0s}
+.sorteo-sparkle:nth-child(2){top:25%;right:8%;animation-delay:.6s;background:var(--title);box-shadow:0 0 12px var(--title)}
+.sorteo-sparkle:nth-child(3){bottom:20%;left:18%;animation-delay:1.2s}
+.sorteo-sparkle:nth-child(4){bottom:30%;right:12%;animation-delay:1.8s;background:var(--title);box-shadow:0 0 12px var(--title)}
+@keyframes sparkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
+
+.sorteo-info{display:flex;flex-direction:column;gap:20px}
+.sorteo-info .kicker{margin-bottom:0}
+.sorteo-info h2{font-size:clamp(28px,5vw,46px);line-height:1.15;margin-bottom:6px}
+.sorteo-info h2 span{color:var(--green)}
+.sorteo-desc{color:var(--muted);font-size:16px;line-height:1.7;max-width:480px}
+.sorteo-features{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.sorteo-feat{display:flex;align-items:center;gap:14px;color:var(--text);font-size:15px}
+.sorteo-feat-ico{
+  width:40px;height:40px;min-width:40px;border-radius:12px;
+  background:rgba(94,240,142,.10);border:1px solid rgba(94,240,142,.3);
+  display:grid;place-items:center;color:var(--green);
+}
+.sorteo-feat-ico svg{width:20px;height:20px}
+.btn-sorteo{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 36px;font-size:15px;font-weight:700;letter-spacing:.12em;
+  color:#041018;
+  background:linear-gradient(135deg,var(--green),#3ecf6f);
+  border-radius:999px;border:none;cursor:pointer;
+  box-shadow:0 14px 50px rgba(94,240,142,.4), inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .25s, box-shadow .25s;
+  font-family:var(--font-display);
+  margin-top:10px;
+}
+.btn-sorteo:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 65px rgba(94,240,142,.55)}
+.btn-sorteo svg{width:20px;height:20px}
+.sorteo-legal{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:14px;max-width:420px;line-height:1.6}
+
+/* ---------- DESCARGAR / PRÓXIMAMENTE ---------- */
+#descargar{position:relative;overflow:hidden}
+.soon-pill{
+  display:inline-block;margin-top:34px;padding:9px 22px;border-radius:999px;
+  background:rgba(46,183,207,.12);border:1px solid rgba(46,183,207,.55);color:var(--title);
+  font-family:var(--font-display);font-weight:700;letter-spacing:.3em;font-size:var(--fs-min);
+}
+.stores{display:flex;justify-content:center;gap:18px;margin-top:20px;flex-wrap:wrap}
+.store{display:flex;align-items:center;gap:14px;padding:16px 26px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid var(--line);backdrop-filter:blur(10px);min-width:220px;cursor:default}
+.store svg{width:30px;height:30px;color:var(--title)}
+.store small{display:block;color:var(--muted);font-size:var(--fs-min);letter-spacing:.16em;text-transform:uppercase}
+.store b{font-family:var(--font-display);font-size:16px;letter-spacing:.08em;color:var(--text)}
+.float-fauna{
+  position:absolute;width:64px;height:64px;display:grid;place-items:center;object-fit:contain;
+  filter:drop-shadow(0 0 14px rgba(94,240,142,.7));animation:floaty 8s ease-in-out infinite;opacity:.9;pointer-events:none;
+  font-size:30px;border-radius:12px;
+}
+.ff1{left:8%;top:22%}.ff2{right:9%;top:30%;animation-delay:1.5s}.ff3{left:14%;bottom:20%;animation-delay:3s}.ff4{right:15%;bottom:24%;animation-delay:4.5s}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-26px) rotate(8deg)}}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14,.7);backdrop-filter:blur(10px)}
+.foot{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.foot-left{display:flex;align-items:center;gap:14px}
+.foot-left p{color:var(--muted);font-size:var(--fs-min);letter-spacing:.1em}
+.foot-logo{width:30px;height:30px;object-fit:contain}
+.socials{display:flex;gap:12px}
+.socials a{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:all .3s;background:rgba(255,255,255,.04)}
+.socials a:hover{color:var(--title);border-color:rgba(46,183,207,.55);transform:translateY(-3px)}
+.socials svg{width:18px;height:18px}
+.atp-wrap{display:flex;align-items:center;gap:12px}
+.atp{width:46px;height:46px;border:2px solid var(--title);border-radius:10px;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:var(--title);letter-spacing:.05em;box-shadow:0 0 20px rgba(46,183,207,.25)}
+.atp-wrap small{color:var(--muted);font-size:var(--fs-min);letter-spacing:.12em;max-width:140px;line-height:1.5}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
 /* ---------- MENÚ MOBILE ---------- */
 .nav-burger{
   display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;
@@ -289,6 +414,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 .mobile-menu a:nth-child(4){transition-delay:.20s}
 .mobile-menu a:nth-child(5){transition-delay:.25s}
 .mobile-menu a:nth-child(6){transition-delay:.30s}
+.mobile-menu a:nth-child(7){transition-delay:.35s}
 .mobile-menu .mm-cta{
   margin-top:16px;font-size:var(--fs-min);color:#041018;letter-spacing:.18em;
   background:linear-gradient(135deg,var(--title),var(--blue));
@@ -301,11 +427,19 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   .nav-burger{display:flex}
   .cards{grid-template-columns:1fr}
   .steps::before{display:none}
+  .sorteo-wrap{grid-template-columns:1fr;gap:40px;padding:80px 24px}
+  .sorteo-visual{min-height:320px}
+  .sorteo-figure{width:200px;height:200px}
+  .sorteo-glow{width:260px;height:260px}
+  .sorteo-ring{width:230px;height:230px}
+  .sorteo-ring2{width:280px;height:280px}
+  .contact-panel{grid-template-columns:1fr}
 }
 @media (max-width:700px){
   .hero-credit{left:14px;bottom:12px}
-  .qs-contact-grid{grid-template-columns:1fr}
   .qs-head{gap:12px}
+  .sorteo-visual{min-height:280px}
+  .sorteo-figure{width:180px;height:180px}
 }
 @media (max-width:640px){
   .tr-play{width:70px;height:78px}.tr-play svg{width:26px;height:26px}
@@ -323,7 +457,8 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
     <a href="#como-jugar">Cómo jugar</a>
     <a href="#trailer">Trailer</a>
     <a href="#quienes-somos">Equipo</a>
-    
+    <a href="#sorteo">Sorteo</a>
+    <a href="#descargar">Descargar</a>
   </nav>
 </header>
 
@@ -450,14 +585,14 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 
   <div class="team reveal">
     <article class="member">
-      <img class="member-photo" src="img/equipo/ezequiel.jpg" alt="Ezequiel J. Lopez Farmani" loading="lazy" data-fb="avatar" data-name="Ezequiel Lopez">
-      <h3>Ezequiel J. Lopez Farmani</h3>
+      <img class="member-photo" src="img/negrofeaso.jpg" alt="Ezequiel J. Lopez Fermani" loading="lazy" data-fb="avatar" data-name="Ezequiel Lopez">
+      <h3>Ezequiel J. Lopez Fermani</h3>
       <p>Dirección, Game Design, Producción, Arte 3D, Diseño e Implementación, Desarrollo / Código</p>
-      <a class="member-li" href="https://www.linkedin.com/in/ezequiel-j-lopez-fermani/" aria-label="LinkedIn de Ezequiel J. Lopez Farmani"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a class="member-li" href="https://www.linkedin.com/in/ezequiel-j-lopez-fermani/" aria-label="LinkedIn de Ezequiel J. Lopez Fermani"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
     </article>
 
     <article class="member">
-      <img class="member-photo" src="img/equipo/loana.jpg" alt="Loana Rubio" loading="lazy" data-fb="avatar" data-name="Loana Rubio">
+      <img class="member-photo" src="img/loaaaaa.jpeg" alt="Loana Rubio" loading="lazy" data-fb="avatar" data-name="Loana Rubio">
       <h3>Loana Rubio</h3>
       <p>Arte 2D y 3D, Diseño e Implementación, Desarrollo / Código</p>
       <a class="member-li" href="https://www.linkedin.com/in/loanarubio/" aria-label="LinkedIn de Loana Rubio"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
@@ -471,7 +606,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
     </article>
 
     <article class="member">
-      <img class="member-photo" src="img/equipo/melanie.jpg" alt="Melanie Hojman" loading="lazy" data-fb="avatar" data-name="Melanie Hojman">
+      <img class="member-photo" src="img/melanie.jpeg" alt="Melanie Hojman" loading="lazy" data-fb="avatar" data-name="Melanie Hojman">
       <h3>Melanie Hojman</h3>
       <p>Producción, Branding, Arte 2D y Diseño UI/UX, Diseño Narrativo</p>
       <a class="member-li" href="https://www.linkedin.com/in/melanie-hojman/" aria-label="LinkedIn de Melanie Hojman"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
@@ -487,15 +622,116 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 
   <div class="qs-contact reveal">
     <span class="kicker">Contacto</span>
-    <div class="qs-contact-grid">
-      <a class="contact-item" href="https://www.instagram.com/ult_jardinero/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg>
-        <u>@ult_jardinero</u>
+    <div class="contact-panel">
+      <a class="contact-card" href="https://www.instagram.com/ult_jardinero/" target="_blank" rel="noopener">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div class="contact-card-info">
+          <span class="contact-card-label">Instagram</span>
+          <span class="contact-card-value"><u>@ult_jardinero</u></span>
+        </div>
+        <div class="contact-card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </div>
       </a>
-      <a class="contact-item" href="mailto:terrabloom2026@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7.5l9 6 9-6"/></svg>
-        <u>terrabloom2026@gmail.com</u>
+      <a class="contact-card" href="mailto:terrabloom2026@gmail.com">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7.5l9 6 9-6"/></svg>
+        </div>
+        <div class="contact-card-info">
+          <span class="contact-card-label">Email</span>
+          <span class="contact-card-value"><u>terrabloom2026@gmail.com</u></span>
+        </div>
+        <div class="contact-card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SORTEO ============ -->
+<section id="sorteo">
+  <div class="sorteo-wrap">
+    <div class="sorteo-visual reveal">
+      <div class="sorteo-glow"></div>
+      <div class="sorteo-ring"></div>
+      <div class="sorteo-ring2"></div>
+      <div class="sorteo-sparkle"></div>
+      
+      
+     
+      <div class="sorteo-figure">
+         <img src="img/png.webp" alt="Muñeco 3D Último Jardinero — Figura de sorteo">
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#5ef08e"/>
+              <stop offset="1" stop-color="#2EB7CF"/>
+            </linearGradient>
+            <linearGradient id="headGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4cc9f0"/>
+              <stop offset="1" stop-color="#2EB7CF"/>
+            </linearGradient>
+            <radialGradient id="eyeGrad">
+              <stop offset="0" stop-color="#ffffff"/>
+              <stop offset="1" stop-color="#CFF8FF"/>
+            </radialGradient>
+            
+          </defs>
+
+          
+          
+
+         
+          
+          <!-- Estrellas alrededor -->
+          <circle cx="30" cy="60" r="2" fill="#5ef08e" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="210" cy="50" r="2.5" fill="#4cc9f0" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="20" cy="150" r="1.8" fill="#CFF8FF" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="220" cy="140" r="2" fill="#5ef08e" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="2.2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+
+    <div class="sorteo-info reveal">
+      <span class="kicker">Sorteo especial</span>
+      <h2>Ganá un <span>muñeco 3D</span> exclusivo de Último Jardinero</h2>
+      <p class="sorteo-desc">¡Participá por una figura coleccionable de UJ! Una pieza única, hecha con amor por el equipo de Terrabloom, para los fans más comprometidos con la restauración planetaria.</p>
+      <div class="sorteo-features">
+        <div class="sorteo-feat">
+          <div class="sorteo-feat-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          </div>
+          <span>Figura 3D coleccionable, edición limitada</span>
+        </div>
+        <div class="sorteo-feat">
+          <div class="sorteo-feat-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <span>Sorteo válido durante la EVA Play 2026</span>
+        </div>
+        <div class="sorteo-feat">
+          <div class="sorteo-feat-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/></svg>
+          </div>
+          <span>Nos contactaremos con los ganadores</span>
+        </div>
+      </div>
+      <a class="btn-sorteo" href="https://docs.google.com/forms/d/1OWHpbShbDB2_EQOYfSDnxqJ-ArFy2durnqxlM8ukl-s/preview" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        PARTICIPAR DEL SORTEO
+      </a>
+      <p class="sorteo-legal">Al participar aceptás los términos y condiciones del sorteo. los ganador será elegido al azar y notificado por email.</p>
     </div>
   </div>
 </section>
@@ -636,9 +872,7 @@ window.addEventListener('scroll',function(){document.getElementById('nav').class
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTrailer();});
 })();
 
-/* ---------- IMÁGENES CON RESPALDO AUTOMÁTICO ----------
-   Si la ruta de tu imagen no existe, se muestra un respaldo
-   (logo SVG, iniciales o emoji) sin romper el diseño. */
+/* ---------- IMÁGENES CON RESPALDO AUTOMÁTICO ---------- */
 (function(){
   function logoSVG(){
     return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'+
