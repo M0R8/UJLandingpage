@@ -130,30 +130,56 @@ button{font-family:inherit}
 
 /* ---------- TRÁILER ---------- */
 #trailer{max-width:1180px;margin:0 auto;padding:110px 24px;text-align:center;position:relative}
-.tr-frame{
-  position:relative;aspect-ratio:16/9;border-radius:26px;overflow:hidden;cursor:pointer;
-  border:1px solid var(--line);background:#000;
+
+/* === NUEVO: Contenedor YouTube responsive === */
+.yt-frame{
+  position:relative;
+  max-width:900px;
+  width:100%;
+  margin:2rem auto;
+  border-radius:26px;
+  overflow:hidden;
+  background:#000;
   box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(46,183,207,.12);
-  transition:box-shadow .4s, transform .4s;
+  border:1px solid var(--line);
+  transition:transform .4s, box-shadow .4s;
 }
-.tr-frame:hover{transform:translateY(-4px);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(94,240,142,.2)}
-.tr-frame img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform 1.4s ease, filter .4s;filter:saturate(1.05)}
-.tr-frame:hover img{transform:scale(1.06);filter:saturate(1.2)}
-.tr-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,16,.35),transparent 30%,transparent 60%,rgba(4,8,16,.75));pointer-events:none}
-.tr-play{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
-  width:96px;height:106px;clip-path:var(--hexa);
-  background:linear-gradient(160deg,var(--title),var(--blue));
-  display:grid;place-items:center;
-  filter:drop-shadow(0 0 30px rgba(46,183,207,.65));
-  transition:transform .3s;animation:trPulse 2.4s ease-in-out infinite;
+.yt-frame:hover{transform:translateY(-4px);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(94,240,142,.2)}
+
+/* Wrapper 16:9 responsivo */
+.yt-wrapper{
+  position:relative;
+  width:100%;
+  padding-top:56.25%; /* 16:9 */
 }
-.tr-frame:hover .tr-play{transform:translate(-50%,-50%) scale(1.1)}
-.tr-play svg{width:36px;height:36px;color:#041018;margin-left:5px}
-@keyframes trPulse{0%,100%{filter:drop-shadow(0 0 18px rgba(46,183,207,.45))}50%{filter:drop-shadow(0 0 42px rgba(46,183,207,.85))}}
-.tr-badge{position:absolute;top:16px;left:16px;z-index:2;padding:8px 16px;border-radius:10px;font-family:var(--font-display);font-weight:700;font-size:var(--fs-min);letter-spacing:.2em;color:#ffd8b0;background:rgba(251,146,60,.18);border:1px solid rgba(251,146,60,.6);backdrop-filter:blur(8px)}
-.tr-time{position:absolute;bottom:16px;right:16px;z-index:2;padding:6px 12px;border-radius:10px;background:rgba(6,10,20,.7);border:1px solid var(--line);backdrop-filter:blur(8px);font-family:var(--font-display);font-weight:700;font-size:var(--fs-min);letter-spacing:.1em}
-.tr-hint{position:absolute;bottom:16px;left:16px;z-index:2;font-size:var(--fs-min);letter-spacing:.12em;color:var(--text);text-transform:uppercase;opacity:.85}
+.yt-wrapper iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* Badge sobre el video */
+.yt-badge{
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:2;
+  padding:8px 16px;
+  border-radius:10px;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:var(--fs-min);
+  letter-spacing:.2em;
+  color:#ffd8b0;
+  background:rgba(251,146,60,.18);
+  border:1px solid rgba(251,146,60,.6);
+  backdrop-filter:blur(8px);
+  pointer-events:none;
+}
+
 .tr-sub{margin-top:22px;color:var(--muted);font-size:var(--fs-min);letter-spacing:.05em}
 .tr-sub b{color:var(--green)}
 
@@ -442,7 +468,8 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   .sorteo-figure{width:180px;height:180px}
 }
 @media (max-width:640px){
-  .tr-play{width:70px;height:78px}.tr-play svg{width:26px;height:26px}
+  .yt-frame{margin:1rem;border-radius:16px}
+  .yt-badge{top:10px;left:10px;font-size:11px;padding:6px 12px;letter-spacing:.12em}
   .tr-hint{display:none}
 }
 </style>
@@ -546,25 +573,21 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   <span class="kicker reveal">Tráiler</span>
   <h2 class="reveal">MIRA EL JARDÍN COBRAR VIDA</h2>
 
-  <div class="tr-frame reveal" id="trFrame" role="button" tabindex="0" aria-label="Reproducir tráiler"
-       data-tr-src="img/TrailerUj 19_6.mp4"
-       data-tr-poster="img/portada.jpeg">
-    <img src="img/portada.jpeg" alt="Tráiler — Último Jardinero">
-    <span class="tr-badge">🎬 GAMEPLAY REVEAL</span>
-    <span class="tr-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-    <span class="tr-time">01:30</span>
-    <span class="tr-hint">🔊 Haz clic para reproducir</span>
+  <!-- Contenedor del video de YouTube -->
+  <div class="yt-frame reveal">
+    <span class="yt-badge"> GAMEPLAY REVEAL</span>
+    <div class="yt-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/T5IJVpvfpNA?rel=0&modestbranding=1" 
+        title="Tráiler — Último Jardinero"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 
   <p class="tr-sub reveal">Un minuto de jardinería cósmica: <b>del páramo al jardín</b>. Sin cortes, solo vida floreciendo.</p>
-
-  <div class="tr-modal" id="trModal" aria-hidden="true">
-    <div class="tr-backdrop" data-tr-close></div>
-    <div class="tr-dialog">
-      <button class="tr-close" data-tr-close aria-label="Cerrar tráiler">✕</button>
-      <div class="tr-screen" id="trScreen"></div>
-    </div>
-  </div>
 </section>
 
 <!-- ============ QUIÉNES SOMOS ============ -->
@@ -659,8 +682,6 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
       <div class="sorteo-ring"></div>
       <div class="sorteo-ring2"></div>
       <div class="sorteo-sparkle"></div>
-      
-      
      
       <div class="sorteo-figure">
          <img src="img/png.webp" alt="Muñeco 3D Último Jardinero — Figura de sorteo">
@@ -678,14 +699,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
               <stop offset="0" stop-color="#ffffff"/>
               <stop offset="1" stop-color="#CFF8FF"/>
             </radialGradient>
-            
           </defs>
-
-          
-          
-
-         
-          
           <!-- Estrellas alrededor -->
           <circle cx="30" cy="60" r="2" fill="#5ef08e" opacity=".8">
             <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
@@ -740,7 +754,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 <section id="descargar" class="section center">
   <img class="float-fauna ff1" src="img/Material06.png" alt="" data-fb="emoji" data-emoji="🐰">
   <img class="float-fauna ff2" src="img/Material10.png" alt="" data-fb="emoji" data-emoji="🐝">
-  <img class="float-fauna ff3" src="img/Material07.png" alt="" data-fb="emoji" data-emoji="🦆">
+  <img class="float-fauna ff3" src="img/Material07.png" alt="" data-fb="emoji" data-emoji="">
   <img class="float-fauna ff4" src="img/Material03.png" alt="" data-fb="emoji" data-emoji="🌱">
 
   <span class="kicker reveal">Plataformas</span>
@@ -809,67 +823,6 @@ window.addEventListener('scroll',function(){document.getElementById('nav').class
   function set(i){idx=i;steps.forEach(function(s,k){s.classList.toggle('active',k===i);});detail.textContent=texts[i];}
   steps.forEach(function(s){s.addEventListener('click',function(){set(parseInt(s.dataset.i,10));});});
   setInterval(function(){if(!wrap.matches(':hover')){set((idx+1)%steps.length);}},3400);
-})();
-
-/* ---------- TRÁILER ---------- */
-(function(){
-  var frame=document.getElementById('trFrame');
-  var modal=document.getElementById('trModal');
-  var screenBox=document.getElementById('trScreen');
-  if(!frame||!modal||!screenBox)return;
-
-  function buildOverlay(vid){
-    var ov=document.createElement('div');ov.className='tr-overlay';
-    ov.innerHTML='<button class="tr-playbtn" aria-label="Reproducir"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>'+
-                 '<p>El navegador pausó el inicio automático<br><small>haz clic en ▶ para reproducir</small></p>';
-    ov.querySelector('button').addEventListener('click',function(){ov.remove();vid.play();});
-    return ov;
-  }
-  function buildError(src){
-    var er=document.createElement('div');er.className='tr-error';
-    er.innerHTML='⚠ No se pudo cargar el video.<br><small>Ruta intentada: <b>'+src+'</b><br>'+
-                 'Verifica que el archivo esté junto a index.html (misma carpeta)<br>y que sea MP4 con códec H.264.</small>';
-    return er;
-  }
-  function openTrailer(){
-    var src=(frame.getAttribute('data-tr-src')||'').trim();
-    screenBox.innerHTML='';
-    if(/youtu\.be|youtube\.com/.test(src)){
-      var emb=src.indexOf('youtu.be')>-1
-        ? src.replace('youtu.be/','www.youtube.com/embed/')
-        : src.replace('watch?v=','embed/');
-      var ifr=document.createElement('iframe');
-      ifr.src=emb+(emb.indexOf('?')>-1?'&':'?')+'autoplay=1';
-      ifr.allow='autoplay; fullscreen; encrypted-media; picture-in-picture';
-      ifr.allowFullscreen=true;
-      screenBox.appendChild(ifr);
-    }else{
-      var vid=document.createElement('video');
-      vid.controls=true;vid.playsInline=true;vid.preload='auto';
-      var poster=frame.getAttribute('data-tr-poster');
-      if(poster)vid.poster=poster;
-      var so=document.createElement('source');
-      so.src=src;so.type='video/mp4';
-      vid.appendChild(so);
-      so.addEventListener('error',function(){vid.remove();screenBox.appendChild(buildError(src));});
-      screenBox.appendChild(vid);
-      var pr=vid.play();
-      if(pr&&pr.catch){pr.catch(function(){screenBox.appendChild(buildOverlay(vid));});}
-    }
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-  }
-  function closeTrailer(){
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    screenBox.innerHTML='';
-    document.body.style.overflow='';
-  }
-  frame.addEventListener('click',openTrailer);
-  frame.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openTrailer();}});
-  modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-tr-close'))closeTrailer();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTrailer();});
 })();
 
 /* ---------- IMÁGENES CON RESPALDO AUTOMÁTICO ---------- */
