@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/500.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/700.css">
+<!-- Calendly (popup widget) -->
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 <style>
 :root{
   --bg:#06060f;
@@ -49,7 +51,7 @@ button{font-family:inherit}
   padding:16px 28px;transition:background .35s, box-shadow .35s, padding .35s;
 }
 .nav.scrolled{background:rgba(6,6,15,.75);backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.45);padding:10px 28px;border-bottom:1px solid var(--line)}
-.links{display:flex;gap:26px;font-size:var(--fs-min);letter-spacing:.06em}
+.links{display:flex;gap:22px;font-size:var(--fs-min);letter-spacing:.06em}
 .links a{color:var(--muted);position:relative;transition:color .25s}
 .links a:hover{color:var(--text)}
 .links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--title),var(--blue));transition:width .3s}
@@ -130,86 +132,22 @@ button{font-family:inherit}
 
 /* ---------- TRÁILER ---------- */
 #trailer{max-width:1180px;margin:0 auto;padding:110px 24px;text-align:center;position:relative}
-
-/* === NUEVO: Contenedor YouTube responsive === */
 .yt-frame{
-  position:relative;
-  max-width:900px;
-  width:100%;
-  margin:2rem auto;
-  border-radius:26px;
-  overflow:hidden;
-  background:#000;
+  position:relative;max-width:900px;width:100%;margin:2rem auto;border-radius:26px;overflow:hidden;background:#000;
   box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(46,183,207,.12);
-  border:1px solid var(--line);
-  transition:transform .4s, box-shadow .4s;
+  border:1px solid var(--line);transition:transform .4s, box-shadow .4s;
 }
 .yt-frame:hover{transform:translateY(-4px);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(94,240,142,.2)}
-
-/* Wrapper 16:9 responsivo */
-.yt-wrapper{
-  position:relative;
-  width:100%;
-  padding-top:56.25%; /* 16:9 */
-}
-.yt-wrapper iframe{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  border:0;
-}
-
-/* Badge sobre el video */
+.yt-wrapper{position:relative;width:100%;padding-top:56.25%}
+.yt-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .yt-badge{
-  position:absolute;
-  top:16px;
-  left:16px;
-  z-index:2;
-  padding:8px 16px;
-  border-radius:10px;
-  font-family:var(--font-display);
-  font-weight:700;
-  font-size:var(--fs-min);
-  letter-spacing:.2em;
-  color:#ffd8b0;
-  background:rgba(251,146,60,.18);
-  border:1px solid rgba(251,146,60,.6);
-  backdrop-filter:blur(8px);
-  pointer-events:none;
+  position:absolute;top:16px;left:16px;z-index:2;padding:8px 16px;border-radius:10px;
+  font-family:var(--font-display);font-weight:700;font-size:var(--fs-min);letter-spacing:.2em;
+  color:#ffd8b0;background:rgba(251,146,60,.18);border:1px solid rgba(251,146,60,.6);
+  backdrop-filter:blur(8px);pointer-events:none;
 }
-
 .tr-sub{margin-top:22px;color:var(--muted);font-size:var(--fs-min);letter-spacing:.05em}
 .tr-sub b{color:var(--green)}
-
-/* ---------- MODAL DE VIDEO ---------- */
-.tr-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
-.tr-modal.open{display:flex}
-.tr-backdrop{position:absolute;inset:0;background:rgba(3,5,12,.9);backdrop-filter:blur(10px)}
-.tr-dialog{
-  position:relative;width:min(1040px,94vw);aspect-ratio:16/9;background:#000;
-  border-radius:18px;border:1px solid var(--line);overflow:hidden;
-  box-shadow:0 40px 120px rgba(0,0,0,.8),0 0 80px rgba(46,183,207,.15);
-  animation:trZoom .35s ease;
-}
-@keyframes trZoom{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-.tr-screen{position:relative;width:100%;height:100%;background:#000}
-.tr-screen video,.tr-screen iframe{width:100%;height:100%;border:0;display:block;object-fit:contain;background:#000}
-.tr-close{
-  position:absolute;top:10px;right:10px;z-index:5;width:40px;height:40px;border-radius:12px;
-  border:1px solid var(--line);background:rgba(6,10,20,.75);color:#fff;cursor:pointer;
-  font-size:16px;display:grid;place-items:center;backdrop-filter:blur(8px);transition:all .25s;
-}
-.tr-close:hover{color:var(--title);border-color:rgba(46,183,207,.55);transform:rotate(90deg)}
-.tr-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(0,0,0,.55);color:var(--text);font-size:var(--fs-min);letter-spacing:.06em;text-align:center;z-index:3}
-.tr-overlay small{color:var(--muted);font-size:var(--fs-min)}
-.tr-playbtn{width:92px;height:102px;clip-path:var(--hexa);background:linear-gradient(160deg,var(--title),var(--blue));border:none;cursor:pointer;display:grid;place-items:center;filter:drop-shadow(0 0 26px rgba(46,183,207,.6));transition:transform .25s}
-.tr-playbtn:hover{transform:scale(1.08)}
-.tr-playbtn svg{width:34px;height:34px;color:#041018;margin-left:4px}
-.tr-error{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#0a0f1c;color:#ffb4b4;text-align:center;padding:30px;font-size:15px;line-height:1.7;z-index:3}
-.tr-error small{color:var(--muted)}
-.tr-error b{color:#fff}
 
 /* ---------- QUIÉNES SOMOS ---------- */
 #quienes-somos{position:relative}
@@ -240,11 +178,9 @@ button{font-family:inherit}
 .member-li:hover{color:var(--title);border-color:rgba(46,183,207,.55);transform:translateY(-3px)}
 .member-li svg{width:17px;height:17px}
 
-/* ---------- CONTACTO MEJORADO ---------- */
+/* ---------- CONTACTO ---------- */
 .qs-contact{margin-top:76px}
-.contact-panel{
-  margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:22px;
-}
+.contact-panel{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .contact-card{
   display:flex;align-items:center;gap:20px;padding:28px 30px;border-radius:22px;
   background:linear-gradient(135deg,rgba(46,183,207,.06),rgba(94,240,142,.04));
@@ -253,21 +189,14 @@ button{font-family:inherit}
 }
 .contact-card::before{
   content:'';position:absolute;top:-50%;right:-30%;width:60%;height:120%;
-  background:radial-gradient(ellipse,rgba(46,183,207,.10),transparent 70%);
-  opacity:0;transition:opacity .4s;
+  background:radial-gradient(ellipse,rgba(46,183,207,.10),transparent 70%);opacity:0;transition:opacity .4s;
 }
-.contact-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(46,183,207,.5);
-  box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(46,183,207,.12);
-}
+.contact-card:hover{transform:translateY(-6px);border-color:rgba(46,183,207,.5);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(46,183,207,.12)}
 .contact-card:hover::before{opacity:1}
 .contact-card-icon{
-  width:60px;height:60px;min-width:60px;border-radius:18px;
-  display:grid;place-items:center;
+  width:60px;height:60px;min-width:60px;border-radius:18px;display:grid;place-items:center;
   background:linear-gradient(135deg,rgba(46,183,207,.15),rgba(94,240,142,.10));
-  border:1px solid rgba(46,183,207,.35);
-  transition:transform .3s;
+  border:1px solid rgba(46,183,207,.35);transition:transform .3s;
 }
 .contact-card:hover .contact-card-icon{transform:scale(1.08) rotate(-4deg)}
 .contact-card-icon svg{width:28px;height:28px;color:var(--title)}
@@ -276,73 +205,32 @@ button{font-family:inherit}
 .contact-card-value{font-size:15px;color:var(--text);font-weight:500;letter-spacing:.02em}
 .contact-card-value u{text-underline-offset:4px}
 .contact-card-arrow{
-  margin-left:auto;position:relative;z-index:1;
-  width:36px;height:36px;border-radius:12px;
-  display:grid;place-items:center;
-  background:rgba(255,255,255,.04);border:1px solid var(--line);
+  margin-left:auto;position:relative;z-index:1;width:36px;height:36px;border-radius:12px;
+  display:grid;place-items:center;background:rgba(255,255,255,.04);border:1px solid var(--line);
   color:var(--muted);transition:all .3s;
 }
 .contact-card:hover .contact-card-arrow{color:var(--title);border-color:rgba(46,183,207,.5);transform:translateX(4px)}
 .contact-card-arrow svg{width:18px;height:18px}
 
 /* ---------- SORTEO ---------- */
-#sorteo{
-  position:relative;overflow:hidden;
-  background:linear-gradient(180deg,rgba(6,6,15,0),rgba(46,183,207,.04) 50%,rgba(6,6,15,0));
-}
-.sorteo-wrap{
-  max-width:1180px;margin:0 auto;padding:110px 24px;
-  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-}
-.sorteo-visual{
-  position:relative;display:flex;align-items:center;justify-content:center;
-  min-height:420px;
-}
-.sorteo-glow{
-  position:absolute;width:320px;height:320px;border-radius:50%;
-  background:radial-gradient(circle,rgba(94,240,142,.18),rgba(46,183,207,.08) 50%,transparent 70%);
-  animation:sortGlow 4s ease-in-out infinite alternate;
-  filter:blur(20px);
-}
+#sorteo{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(6,6,15,0),rgba(46,183,207,.04) 50%,rgba(6,6,15,0))}
+.sorteo-wrap{max-width:1180px;margin:0 auto;padding:110px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.sorteo-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px}
+.sorteo-glow{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(94,240,142,.18),rgba(46,183,207,.08) 50%,transparent 70%);animation:sortGlow 4s ease-in-out infinite alternate;filter:blur(20px)}
 @keyframes sortGlow{from{transform:scale(.9);opacity:.7}to{transform:scale(1.1);opacity:1}}
-.sorteo-ring{
-  position:absolute;width:280px;height:280px;border-radius:50%;
-  border:1px dashed rgba(46,183,207,.3);
-  animation:sortSpin 30s linear infinite;
-}
-.sorteo-ring::before{
-  content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;
-  background:var(--green);box-shadow:0 0 12px var(--green);
-}
+.sorteo-ring{position:absolute;width:280px;height:280px;border-radius:50%;border:1px dashed rgba(46,183,207,.3);animation:sortSpin 30s linear infinite}
+.sorteo-ring::before{content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
 @keyframes sortSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.sorteo-ring2{
-  position:absolute;width:340px;height:340px;border-radius:50%;
-  border:1px solid rgba(94,240,142,.15);
-  animation:sortSpin 45s linear infinite reverse;
-}
-.sorteo-ring2::after{
-  content:'';position:absolute;bottom:-3px;left:50%;width:6px;height:6px;border-radius:50%;
-  background:var(--title);box-shadow:0 0 10px var(--title);
-}
-.sorteo-figure{
-  position:relative;z-index:2;
-  width:240px;height:240px;
-  animation:sortFloat 5s ease-in-out infinite;
-  filter:drop-shadow(0 20px 40px rgba(46,183,207,.3));
-}
+.sorteo-ring2{position:absolute;width:340px;height:340px;border-radius:50%;border:1px solid rgba(94,240,142,.15);animation:sortSpin 45s linear infinite reverse}
+.sorteo-ring2::after{content:'';position:absolute;bottom:-3px;left:50%;width:6px;height:6px;border-radius:50%;background:var(--title);box-shadow:0 0 10px var(--title)}
+.sorteo-figure{position:relative;z-index:2;width:240px;height:240px;animation:sortFloat 5s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(46,183,207,.3))}
+.sorteo-figure>img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:contain}
+.sorteo-figure svg{position:absolute;inset:0;width:100%;height:100%}
 @keyframes sortFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}
-.sorteo-figure svg{width:100%;height:100%}
-.sorteo-sparkle{
-  position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;
-  background:var(--green);box-shadow:0 0 12px var(--green);
-  animation:sparkle 2.5s ease-in-out infinite;
-}
-.sorteo-sparkle:nth-child(1){top:15%;left:10%;animation-delay:0s}
-.sorteo-sparkle:nth-child(2){top:25%;right:8%;animation-delay:.6s;background:var(--title);box-shadow:0 0 12px var(--title)}
-.sorteo-sparkle:nth-child(3){bottom:20%;left:18%;animation-delay:1.2s}
-.sorteo-sparkle:nth-child(4){bottom:30%;right:12%;animation-delay:1.8s;background:var(--title);box-shadow:0 0 12px var(--title)}
+.sorteo-sparkle{position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:sparkle 2.5s ease-in-out infinite}
+.sorteo-sparkle:nth-child(4){top:15%;left:10%;animation-delay:0s}
+.sorteo-sparkle:nth-child(5){top:25%;right:8%;animation-delay:.6s;background:var(--title);box-shadow:0 0 12px var(--title)}
 @keyframes sparkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
-
 .sorteo-info{display:flex;flex-direction:column;gap:20px}
 .sorteo-info .kicker{margin-bottom:0}
 .sorteo-info h2{font-size:clamp(28px,5vw,46px);line-height:1.15;margin-bottom:6px}
@@ -350,26 +238,45 @@ button{font-family:inherit}
 .sorteo-desc{color:var(--muted);font-size:16px;line-height:1.7;max-width:480px}
 .sorteo-features{display:flex;flex-direction:column;gap:14px;margin-top:8px}
 .sorteo-feat{display:flex;align-items:center;gap:14px;color:var(--text);font-size:15px}
-.sorteo-feat-ico{
-  width:40px;height:40px;min-width:40px;border-radius:12px;
-  background:rgba(94,240,142,.10);border:1px solid rgba(94,240,142,.3);
-  display:grid;place-items:center;color:var(--green);
-}
+.sorteo-feat-ico{width:40px;height:40px;min-width:40px;border-radius:12px;background:rgba(94,240,142,.10);border:1px solid rgba(94,240,142,.3);display:grid;place-items:center;color:var(--green)}
 .sorteo-feat-ico svg{width:20px;height:20px}
 .btn-sorteo{
-  display:inline-flex;align-items:center;gap:12px;
-  padding:18px 36px;font-size:15px;font-weight:700;letter-spacing:.12em;
-  color:#041018;
-  background:linear-gradient(135deg,var(--green),#3ecf6f);
-  border-radius:999px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:12px;padding:18px 36px;font-size:15px;font-weight:700;letter-spacing:.12em;
+  color:#041018;background:linear-gradient(135deg,var(--green),#3ecf6f);border-radius:999px;border:none;cursor:pointer;
   box-shadow:0 14px 50px rgba(94,240,142,.4), inset 0 1px 0 rgba(255,255,255,.5);
-  transition:transform .25s, box-shadow .25s;
-  font-family:var(--font-display);
-  margin-top:10px;
+  transition:transform .25s, box-shadow .25s;font-family:var(--font-display);margin-top:10px;
 }
 .btn-sorteo:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 65px rgba(94,240,142,.55)}
 .btn-sorteo svg{width:20px;height:20px}
 .sorteo-legal{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:14px;max-width:420px;line-height:1.6}
+
+/* ============ PRÓXIMOS PASOS / REUNIÓN ============
+   Sin bordes ni cortes: el resplandor se derrama hacia las
+   secciones vecinas y se desvanece con máscara vertical. */
+#proximos-pasos{position:relative}
+#proximos-pasos::before{
+  content:'';position:absolute;left:0;right:0;top:-220px;bottom:-220px;pointer-events:none;
+  background:
+    radial-gradient(760px 520px at 10% 28%, rgba(46,183,207,.12), transparent 65%),
+    radial-gradient(700px 560px at 92% 72%, rgba(94,240,142,.10), transparent 65%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);
+}
+.pp-wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:110px 24px}
+.pp-head h2{font-size:clamp(26px,4.6vw,44px);letter-spacing:.04em;margin-bottom:16px}
+.pp-head h2 span{color:var(--green)}
+.pp-cta{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;margin-top:52px}
+.btn-meet{
+  display:inline-flex;align-items:center;gap:12px;padding:17px 34px;border-radius:999px;border:none;cursor:pointer;
+  font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.12em;color:#041018;
+  background:linear-gradient(135deg,var(--green),#3ecf6f);
+  box-shadow:0 14px 50px rgba(94,240,142,.4), inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .25s,box-shadow .25s;
+}
+.btn-meet:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 65px rgba(94,240,142,.55)}
+.btn-meet svg{width:20px;height:20px}
+.pp-foot{margin-top:26px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.05em;line-height:1.7}
+.pp-foot b{color:var(--text)}
 
 /* ---------- DESCARGAR / PRÓXIMAMENTE ---------- */
 #descargar{position:relative;overflow:hidden}
@@ -424,12 +331,12 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   position:fixed;inset:0;z-index:55;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:6px;
   background:rgba(6,6,15,.94);backdrop-filter:blur(18px);
-  opacity:0;pointer-events:none;transition:opacity .35s;
+  opacity:0;pointer-events:none;transition:opacity .35s;overflow-y:auto;padding:80px 20px;
 }
 .mobile-menu.open{opacity:1;pointer-events:auto}
 .mobile-menu a{
-  font-family:var(--font-display);font-weight:700;font-size:19px;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--text);padding:13px 26px;border-radius:14px;
+  font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--text);padding:12px 24px;border-radius:14px;text-align:center;
   opacity:0;transform:translateY(14px);transition:opacity .4s,transform .4s,color .25s,background .25s;
 }
 .mobile-menu.open a{opacity:1;transform:none}
@@ -441,6 +348,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 .mobile-menu a:nth-child(5){transition-delay:.25s}
 .mobile-menu a:nth-child(6){transition-delay:.30s}
 .mobile-menu a:nth-child(7){transition-delay:.35s}
+.mobile-menu a:nth-child(8){transition-delay:.40s}
 .mobile-menu .mm-cta{
   margin-top:16px;font-size:var(--fs-min);color:#041018;letter-spacing:.18em;
   background:linear-gradient(135deg,var(--title),var(--blue));
@@ -460,6 +368,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   .sorteo-ring{width:230px;height:230px}
   .sorteo-ring2{width:280px;height:280px}
   .contact-panel{grid-template-columns:1fr}
+  .pp-wrap{padding:84px 22px}
 }
 @media (max-width:700px){
   .hero-credit{left:14px;bottom:12px}
@@ -471,6 +380,8 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   .yt-frame{margin:1rem;border-radius:16px}
   .yt-badge{top:10px;left:10px;font-size:11px;padding:6px 12px;letter-spacing:.12em}
   .tr-hint{display:none}
+  .pp-cta{gap:12px}
+  .btn-meet{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -480,11 +391,12 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
 
 <header class="nav" id="nav">
  <nav class="links">
+    <a href="#sorteo">Sorteo</a>
     <a href="#concepto">Concepto</a>
     <a href="#como-jugar">Cómo jugar</a>
     <a href="#trailer">Tráiler</a>
     <a href="#quienes-somos">Equipo</a>
-    <a href="#sorteo">Sorteo</a>
+    <a href="#proximos-pasos">Contacto</a>
     <a href="#descargar">Descarga</a>
   </nav>
 </header>
@@ -509,6 +421,68 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   <div class="scroll-hint">▼</div>
 </section>
 
+<!-- ============ SORTEO ============ -->
+<section id="sorteo">
+  <div class="sorteo-wrap">
+    <div class="sorteo-visual reveal">
+      <div class="sorteo-glow"></div>
+      <div class="sorteo-ring"></div>
+      <div class="sorteo-ring2"></div>
+      <div class="sorteo-sparkle"></div>
+      <div class="sorteo-sparkle"></div>
+      <div class="sorteo-figure">
+         <img src="img/png.webp" alt="Muñeco 3D Último Jardinero — Figura de sorteo">
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="60" r="2" fill="#5ef08e" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="210" cy="50" r="2.5" fill="#4cc9f0" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="20" cy="150" r="1.8" fill="#CFF8FF" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="220" cy="140" r="2" fill="#5ef08e" opacity=".8">
+            <animate attributeName="opacity" values=".2;1;.2" dur="2.2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+
+    <div class="sorteo-info reveal">
+      <span class="kicker">Sorteo especial</span>
+      <h2>Ganá un <span>muñeco 3D</span> exclusivo de Último Jardinero</h2>
+      <p class="sorteo-desc">¡Participá por una figura coleccionable de UJ! Una pieza única, hecha con amor por el equipo de Terrabloom, para los fans más comprometidos con la restauración planetaria.</p>
+      <div class="sorteo-features">
+        <div class="sorteo-feat">
+          <div class="sorteo-feat-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          </div>
+          <span>Figura 3D coleccionable, edición limitada</span>
+        </div>
+        <div class="sorteo-feat">
+          <div class="sorteo-feat-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <span>Sorteo válido durante la EVA Play 2026</span>
+        </div>
+        <div class="sorteo-feat">
+          <div class="sorteo-feat-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/></svg>
+          </div>
+          <span>Nos contactaremos con los ganadores</span>
+        </div>
+      </div>
+      <a class="btn-sorteo" href="https://docs.google.com/forms/d/e/1FAIpQLSf726_9IT7q18QKo5Bvug4_loQDUhU3WaVIluEV6tukN5nT8w/viewform" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        PARTICIPAR DEL SORTEO
+      </a>
+      <p class="sorteo-legal">Al participar aceptás los términos y condiciones del sorteo. El ganador será elegido al azar y notificado por email.</p>
+    </div>
+  </div>
+</section>
+
+
 <!-- ============ CONCEPTO ============ -->
 <section id="concepto" class="section">
   <span class="kicker reveal">El concepto</span>
@@ -518,7 +492,7 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
     <article class="card reveal">
       <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16"/><path d="M6 20v-6l4-2v8"/><path d="M14 20V9l4-2v13"/><path d="M12 3c-2 1.5-2 3.5 0 5 2-1.5 2-3.5 0-5z" fill="currentColor" stroke="none"/></svg></div>
       <h3>City Builder invertido</h3>
-      <p>En lugar de expandirse y explotar recursos, el foco está en restaurar ecosistemas, logrando el objetivo de asentar a la humanidad en nuevos planetas.</p>
+      <p>En lugar de expandirse y explotar recursos, el propósito es sanar la tierra, preparando el terreno para que la naturaleza y la fauna recuperen su lugar.</p>
     </article>
 
     <article class="card reveal">
@@ -573,7 +547,6 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   <span class="kicker reveal">Tráiler</span>
   <h2 class="reveal">MIRA EL JARDÍN COBRAR VIDA</h2>
 
-  <!-- Contenedor del video de YouTube -->
   <div class="yt-frame reveal">
     <span class="yt-badge"> GAMEPLAY REVEAL</span>
     <div class="yt-wrapper">
@@ -611,14 +584,14 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
       <img class="member-photo" src="img/negriprueb.jpeg" alt="Ezequiel J. Lopez Fermani" loading="lazy" data-fb="avatar" data-name="Ezequiel Lopez">
       <h3>Ezequiel J. Lopez Fermani</h3>
       <p>Dirección, Game Design, Producción, Arte 3D, Diseño e Implementación, Desarrollo / Código</p>
-      <a class="member-li" href="https://www.linkedin.com/in/ezequiel-j-lopez-fermani/" aria-label="LinkedIn de Ezequiel J. Lopez Fermani"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a class="member-li" href="https://www.linkedin.com/in/ezequiel-j-lopez-fermani/" target="_blank" rel="noopener" aria-label="LinkedIn de Ezequiel J. Lopez Fermani"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
     </article>
 
     <article class="member">
       <img class="member-photo" src="img/loaaaaa.jpeg" alt="Loana Rubio" loading="lazy" data-fb="avatar" data-name="Loana Rubio">
       <h3>Loana Rubio</h3>
       <p>Arte 2D y 3D, Diseño e Implementación, Desarrollo / Código</p>
-      <a class="member-li" href="https://www.linkedin.com/in/loanarubio/" aria-label="LinkedIn de Loana Rubio"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a class="member-li" href="https://www.linkedin.com/in/loanarubio/" target="_blank" rel="noopener" aria-label="LinkedIn de Loana Rubio"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
     </article>
 
     <article class="member">
@@ -632,33 +605,33 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
       <img class="member-photo" src="img/melanie.jpeg" alt="Melanie Hojman" loading="lazy" data-fb="avatar" data-name="Melanie Hojman">
       <h3>Melanie Hojman</h3>
       <p>Producción, Branding, Arte 2D y Diseño UI/UX, Diseño Narrativo</p>
-      <a class="member-li" href="https://www.linkedin.com/in/melanie-hojman/" aria-label="LinkedIn de Melanie Hojman"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a class="member-li" href="https://www.linkedin.com/in/melanie-hojman/" target="_blank" rel="noopener" aria-label="LinkedIn de Melanie Hojman"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
     </article>
 
     <article class="member">
       <img class="member-photo" src="img/tahifoto.jpeg" alt="Luca Tahiel Ludi" loading="lazy" data-fb="avatar" data-name="Luca Tahiel Ludi">
       <h3>Luca Tahiel Ludi</h3>
       <p>Desarrollo / Código, Implementación de Audio y Sonido, CM y PR</p>
-      <a class="member-li" href="https://www.linkedin.com/in/luca-tahiel-ludi-6b146b1b7/" aria-label="LinkedIn de Luca Tahiel Ludi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a class="member-li" href="https://www.linkedin.com/in/luca-tahiel-ludi-6b146b1b7/" target="_blank" rel="noopener" aria-label="LinkedIn de Luca Tahiel Ludi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
     </article>
      <article class="member">
       <img class="member-photo" src="img/budaputa.jpeg" alt="Bruno Magaró" loading="lazy" data-fb="avatar" data-name="Bruno Magaró">
       <h3>Bruno Magaró</h3>
       <p>Composición y Producción Musical</p>
-      <a class="member-li" href="https://www.linkedin.com/in/brunomagaro/" aria-label="LinkedIn de Bruno Magaró"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a class="member-li" href="https://www.linkedin.com/in/brunomagaro/" target="_blank" rel="noopener" aria-label="LinkedIn de Bruno Magaró"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
     </article>
   </div>
 
   <div class="qs-contact reveal">
     <span class="kicker">Contacto</span>
     <div class="contact-panel">
-      <a class="contact-card" href="https://www.instagram.com/ult_jardinero/" target="_blank" rel="noopener">
+      <a class="contact-card" href="https://www.instagram.com/terrabloom_estudio?mdxt=MWF5cmdvZnQ2Ymdkbw%3D%3D" target="_blank" rel="noopener">
         <div class="contact-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg>
         </div>
         <div class="contact-card-info">
           <span class="contact-card-label">Instagram</span>
-          <span class="contact-card-value"><u>@ult_jardinero</u></span>
+          <span class="contact-card-value"><u>@terrabloom_estudio</u></span>
         </div>
         <div class="contact-card-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
@@ -680,87 +653,42 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
   </div>
 </section>
 
-<!-- ============ SORTEO ============ -->
-<section id="sorteo">
-  <div class="sorteo-wrap">
-    <div class="sorteo-visual reveal">
-      <div class="sorteo-glow"></div>
-      <div class="sorteo-ring"></div>
-      <div class="sorteo-ring2"></div>
-      <div class="sorteo-sparkle"></div>
-     
-      <div class="sorteo-figure">
-         <img src="img/png.webp" alt="Muñeco 3D Último Jardinero — Figura de sorteo">
-        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#5ef08e"/>
-              <stop offset="1" stop-color="#2EB7CF"/>
-            </linearGradient>
-            <linearGradient id="headGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#4cc9f0"/>
-              <stop offset="1" stop-color="#2EB7CF"/>
-            </linearGradient>
-            <radialGradient id="eyeGrad">
-              <stop offset="0" stop-color="#ffffff"/>
-              <stop offset="1" stop-color="#CFF8FF"/>
-            </radialGradient>
-          </defs>
-          <!-- Estrellas alrededor -->
-          <circle cx="30" cy="60" r="2" fill="#5ef08e" opacity=".8">
-            <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="210" cy="50" r="2.5" fill="#4cc9f0" opacity=".8">
-            <animate attributeName="opacity" values=".2;1;.2" dur="2.5s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="20" cy="150" r="1.8" fill="#CFF8FF" opacity=".8">
-            <animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="220" cy="140" r="2" fill="#5ef08e" opacity=".8">
-            <animate attributeName="opacity" values=".2;1;.2" dur="2.2s" repeatCount="indefinite"/>
-          </circle>
-        </svg>
-      </div>
+
+<!-- ============ NUESTROS PRÓXIMOS PASOS / REUNIÓN ============ -->
+<section id="proximos-pasos">
+  <div class="pp-wrap">
+
+    <div class="pp-head center">
+      <span class="kicker reveal">Nuestros próximos pasos</span>
+      <h2 class="reveal">PROGRAMÁ UNA <span>REUNIÓN</span> CON NOSOTROS</h2>
+      <p class="lead reveal" style="margin:0 auto">
+        Último Jardinero está creciendo y queremos hacerlo junto a vos. Si sos <b style="color:var(--text)">prensa, publisher, inversor,
+        festivales o un talento que quiere sumarse al estudio</b>, elegí un horario disponible y conversemos 30/45 minutos.
+        Sin vueltas: te contamos dónde estamos y hacia dónde vamos.
+      </p>
     </div>
 
-    <div class="sorteo-info reveal">
-      <span class="kicker">Sorteo especial</span>
-      <h2>Ganá un <span>muñeco 3D</span> exclusivo de Último Jardinero</h2>
-      <p class="sorteo-desc">¡Participá por una figura coleccionable de UJ! Una pieza única, hecha con amor por el equipo de Terrabloom, para los fans más comprometidos con la restauración planetaria.</p>
-      <div class="sorteo-features">
-        <div class="sorteo-feat">
-          <div class="sorteo-feat-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-          </div>
-          <span>Figura 3D coleccionable, edición limitada</span>
-        </div>
-        <div class="sorteo-feat">
-          <div class="sorteo-feat-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </div>
-          <span>Sorteo válido durante la EVA Play 2026</span>
-        </div>
-        <div class="sorteo-feat">
-          <div class="sorteo-feat-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/></svg>
-          </div>
-          <span>Nos contactaremos con los ganadores</span>
-        </div>
-      </div>
-      <a class="btn-sorteo" href="https://docs.google.com/forms/d/1OWHpbShbDB2_EQOYfSDnxqJ-ArFy2durnqxlM8ukl-s/preview" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        PARTICIPAR DEL SORTEO
-      </a>
-      <p class="sorteo-legal">Al participar aceptás los términos y condiciones del sorteo. los ganador será elegido al azar y notificado por email.</p>
+    <div class="pp-cta reveal">
+      <button class="btn-meet" id="btnPopupMeeting" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M12 14v3M10.5 15.5h3"/></svg>
+        AGENDAR REUNIÓN
+      </button>
     </div>
+
+    <p class="pp-foot reveal">
+      Respondemos todas las consultas dentro de las <b>48 horas hábiles</b>.<br>
+      Terrabloom Estudio · <b>Último Jardinero</b>
+    </p>
+
   </div>
 </section>
+
 
 <!-- ============ PRÓXIMAMENTE / PLATAFORMAS ============ -->
 <section id="descargar" class="section center">
   <img class="float-fauna ff1" src="img/Material06.png" alt="" data-fb="emoji" data-emoji="🐰">
   <img class="float-fauna ff2" src="img/Material10.png" alt="" data-fb="emoji" data-emoji="🐝">
-  <img class="float-fauna ff3" src="img/Material07.png" alt="" data-fb="emoji" data-emoji="">
+  <img class="float-fauna ff3" src="img/Material07.png" alt="" data-fb="emoji" data-emoji="🦋">
   <img class="float-fauna ff4" src="img/Material03.png" alt="" data-fb="emoji" data-emoji="🌱">
 
   <span class="kicker reveal">Plataformas</span>
@@ -782,8 +710,9 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
     </div>
     <div class="socials">
       <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></a>
-      <a href="https://www.youtube.com/@Terrabloom2026" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://www.instagram.com/ult_jardinero/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.youtube.com/@Terrabloom2026" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.instagram.com/terrabloom_estudio?mdxt=MWF5cmdvZnQ2Ymdkbw%3D%3D" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://calendly.com/terrabloom2026/30min" target="_blank" rel="noopener" aria-label="Agendar reunión"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
       <a href="mailto:terrabloom2026@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7.5l9 6 9-6"/></svg></a>
     </div>
     <div class="atp-wrap">
@@ -792,6 +721,9 @@ footer{border-top:1px solid var(--line);padding:36px 28px;background:rgba(4,6,14
     </div>
   </div>
 </footer>
+
+<!-- Calendly widget script (popup) -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 <script>
 /* ---------- STARFIELD ---------- */
@@ -809,7 +741,7 @@ window.addEventListener('scroll',function(){document.getElementById('nav').class
 
 /* ---------- REVEAL ---------- */
 (function(){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 })();
 
@@ -819,16 +751,30 @@ window.addEventListener('scroll',function(){document.getElementById('nav').class
   var detail=document.getElementById('stepDetail');
   if(!steps.length||!detail)return;
   var texts=[
-    'Lee los indicadores de Temperatura y Atmósfera: cada planeta comienza en un extremo hostil.',
-    'Recolecta minerales para poder construir nuestras maquinas de terraformación y equilibrar el planeta.',
-    'Lleva ambos indicadores a la Zona Verde (Habitable) para poder plantar la flora.',
-    'Siembra flora chica, mediana y grande para mantener el equilibrio ecológico y permitir el nacimiento de nuevos animales.',
-    'Con el planeta equilibrado, desbloquea el siguiente mundo del Mapa Estelar y continúa la aventura.'
+    'Leé los indicadores de Temperatura y Atmósfera: cada planeta comienza en un extremo hostil.',
+    'Recolectá minerales para poder construir nuestras máquinas de terraformación y equilibrar el planeta.',
+    'Llevá ambos indicadores a la Zona Verde (Habitable) para poder plantar la flora.',
+    'Sembrá flora chica, mediana y grande para mantener el equilibrio ecológico y permitir el nacimiento de nuevos animales.',
+    'Con el planeta equilibrado, desbloqueá el siguiente mundo del Mapa Estelar y continuá la aventura.'
   ];
   var idx=0,wrap=document.getElementById('steps');
   function set(i){idx=i;steps.forEach(function(s,k){s.classList.toggle('active',k===i);});detail.textContent=texts[i];}
   steps.forEach(function(s){s.addEventListener('click',function(){set(parseInt(s.dataset.i,10));});});
   setInterval(function(){if(!wrap.matches(':hover')){set((idx+1)%steps.length);}},3400);
+})();
+
+/* ---------- CALENDLY: popup de reunión ---------- */
+(function(){
+  var CAL_URL='https://calendly.com/terrabloom2026/30min';
+  var popBtn=document.getElementById('btnPopupMeeting');
+  if(!popBtn)return;
+  popBtn.addEventListener('click',function(){
+    if(window.Calendly&&typeof Calendly.initPopupWidget==='function'){
+      Calendly.initPopupWidget({url:CAL_URL});
+    }else{
+      window.open(CAL_URL,'_blank','noopener');
+    }
+  });
 })();
 
 /* ---------- IMÁGENES CON RESPALDO AUTOMÁTICO ---------- */
@@ -891,7 +837,7 @@ window.addEventListener('scroll',function(){document.getElementById('nav').class
     });
   }
   var cta=document.createElement('a');
-  cta.href='#descargar';cta.textContent='Próximamente';cta.className='mm-cta';
+  cta.href='#proximos-pasos';cta.textContent='Agendá una reunión';cta.className='mm-cta';
   menu.appendChild(cta);
   document.body.appendChild(menu);
 
